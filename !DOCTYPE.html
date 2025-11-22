@@ -177,7 +177,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Removed the "Financial Growth" image from here as requested -->
             </div>
             
             <!-- 2. Master These 5 Pillars (Key Topics) -->
@@ -316,3 +315,48 @@
                     // Draw dot
                     ctx.beginPath();
                     ctx.arc(dot.x, dot.y, currentRadius, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                } else {
+                    // Base state: dim dot
+                    ctx.fillStyle = baseColor;
+                    ctx.shadowBlur = 0;
+                    ctx.beginPath();
+                    ctx.arc(dot.x, dot.y, dotRadius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', setCanvasSize);
+        window.addEventListener('load', () => {
+            setCanvasSize();
+            draw();
+        });
+        
+        // Update mouse position on mousemove, relative to the document
+        document.addEventListener('mousemove', (e) => {
+            // Use clientX/Y as canvas is fixed position
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Handle touch move for mobile (no hover effect, but dots will react to touch)
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
+            }
+        });
+
+        // Reset mouse position when touch ends
+        document.addEventListener('touchend', () => {
+            mouseX = -maxDistance;
+            mouseY = -maxDistance;
+        });
+
+    </script>
+</body>
+</html>
