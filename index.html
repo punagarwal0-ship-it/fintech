@@ -6,7 +6,7 @@
     <title>FinFit: Get Financially Fit - Registration</title>
     <meta name="description" content="Join the Fintech Club VITB for a definitive workshop on personal finance and wealth creation.">
     
-    <!-- Open Graph / Facebook / WhatsApp Display -->
+    <!-- Open Graph / Social Media Display -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="FinFit: Get Financially Fit">
     <meta property="og:description" content="Master personal finance with Fintech Club VITB. Register now!">
@@ -19,15 +19,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0d0d; /* Dark background */
-            color: #f3f4f6; /* Light text */
+            /* Stable dark background, replacing the complex canvas */
+            background-color: #0d0d0d; 
+            color: #f3f4f6; 
             position: relative;
         }
         .main-container {
             max-width: 1280px;
         }
         .text-corporate-green {
-            color: #10b981; /* Brighter, more energetic green (emerald) */
+            color: #10b981;
         }
         .bg-corporate-green {
             background-color: #10b981;
@@ -44,32 +45,16 @@
         .topic-item:last-child {
             border-bottom: none;
         }
-        /* Canvas for the interactive background */
-        #dotCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Ensure it's behind all content */
-        }
-        /* Ensure content sections have a background to hide the canvas underneath */
-        main, header, footer, section {
-            position: relative;
-            z-index: 0;
-        }
+        /* Removed all Canvas and related styles for faster loading */
     </style>
 </head>
 <body class="min-h-screen antialiased selection:bg-corporate-green selection:text-black">
-
-    <!-- Interactive Dot Background Canvas -->
-    <canvas id="dotCanvas"></canvas>
 
     <!-- Header Section - Branding and Logos -->
     <header class="bg-[#1a1a1a]/90 backdrop-blur-md shadow-lg border-b border-gray-800 sticky top-0 z-50">
         <div class="main-container mx-auto p-4 flex justify-between items-center">
             
-            <!-- Left Logo Section: Pure CSS/HTML (No Image Dependency) -->
+            <!-- Left Logo Section: Pure CSS/HTML (Fintech Club) -->
             <div class="flex items-center gap-4 select-none">
                 <!-- Icon Container -->
                 <div class="relative flex items-center justify-center pt-1 group cursor-pointer">
@@ -104,9 +89,9 @@
                 Enroll Now
             </a>
 
-            <!-- Right Logo: VIT Bhopal (Reconstructed) -->
+            <!-- Right Logo: VIT Bhopal (Reconstructed Minimalist) -->
             <div class="flex items-center gap-3">
-                <!-- NOTE FOR GITHUB: To make this permanent, save the image locally as 'vit_seal.png' and update src="vit_seal.png" -->
+                <!-- Seal Image (Using public URL) -->
                 <img src="https://th.bing.com/th/id/OIP.Id7bhWjKWsJLGBxkhPze3AHaHp?w=180&h=187&c=7&r=0&o=7&pid=1.7&rm=3" 
                      alt="VIT Seal" 
                      class="h-10 w-auto opacity-95 filter brightness-110"
@@ -149,9 +134,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             <!-- 1. What You Are In For (Logistics/Venue) -->
-            <div class="lg:col-span-1 bg-[#1a1a1a] p-6 sm:p-8 rounded-xl shadow-2xl border-t-4 border-corporate-green h-full relative overflow-hidden group flex flex-col justify-center">
-                <!-- Background Image Overlay (Embedded Base64 - No external file needed) -->
-                <div class="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+            <div class="lg:col-span-1 bg-[#1a1a1a] p-6 sm:p-8 rounded-xl shadow-2xl border-t-4 border-corporate-green h-full relative overflow-hidden flex flex-col justify-center">
+                <!-- Background pattern embedded via Base64, now static -->
+                <div class="absolute inset-0 z-0 opacity-20"
                      style="background-image: url('data:image/webp;base64,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'); background-size: cover; background-position: center;">
                 </div>
 
@@ -228,7 +213,7 @@
             <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
                 
                 <!-- Speaker Image Placeholder -->
-                <!-- NOTE FOR GITHUB: Save your speaker image as 'speaker.jpg' and update src="speaker.jpg" -->
+                <!-- NOTE: For GitHub, save your speaker image as 'speaker.jpg' and update src="speaker.jpg" -->
                 <div class="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 rounded-full flex items-center justify-center overflow-hidden border-4 border-corporate-green shadow-xl">
                     <img src="https://placehold.co/400x400/10b981/0d0d0d?text=MR+JHAWAR" 
                          alt="Professional headshot of Mr. Abhishek Kumar Jhawar" 
@@ -263,108 +248,5 @@
     <footer class="bg-[#1a1a1a] text-center p-6 mt-12 border-t border-gray-800">
         <p class="text-sm text-gray-500">&copy; 2025 Fintech Club VITB. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        const canvas = document.getElementById('dotCanvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        const dots = [];
-        const dotSpacing = 60; 
-        const dotRadius = 1.5;
-        const maxDistance = 150; 
-        const baseColor = 'rgba(255, 255, 255, 0.05)'; 
-        const activeColor = '#10b981'; 
-        let mouseX = -maxDistance;
-        let mouseY = -maxDistance;
-
-        function setCanvasSize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = document.body.scrollHeight; // Match document height
-            initializeDots();
-        }
-
-        function initializeDots() {
-            dots.length = 0; // Clear existing dots
-            const cols = Math.ceil(width / dotSpacing);
-            const rows = Math.ceil(height / dotSpacing);
-
-            for (let i = 0; i < cols; i++) {
-                for (let j = 0; j < rows; j++) {
-                    const x = i * dotSpacing + dotSpacing / 2;
-                    const y = j * dotSpacing + dotSpacing / 2;
-                    dots.push({ x, y });
-                }
-            }
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, width, height);
-
-            dots.forEach(dot => {
-                const dx = dot.x - mouseX;
-                const dy = dot.y - mouseY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < maxDistance) {
-                    // Calculate intensity based on inverse distance
-                    const intensity = 1 - (distance / maxDistance); 
-
-                    // Glowing effect: Radius increase
-                    const currentRadius = dotRadius + (2.5 * intensity);
-                    
-                    // Color change and glow
-                    const opacity = 0.2 + (0.7 * intensity);
-                    ctx.fillStyle = `rgba(16, 185, 129, ${opacity})`; 
-                    
-                    // Add subtle shadow for glow
-                    ctx.shadowBlur = 10 * intensity;
-                    ctx.shadowColor = activeColor;
-                    
-                    // Draw dot
-                    ctx.beginPath();
-                    ctx.arc(dot.x, dot.y, currentRadius, 0, Math.PI * 2);
-                    ctx.fill();
-                    
-                } else {
-                    // Base state: dim dot
-                    ctx.fillStyle = baseColor;
-                    ctx.shadowBlur = 0;
-                    ctx.beginPath();
-                    ctx.arc(dot.x, dot.y, dotRadius, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            });
-
-            requestAnimationFrame(draw);
-        }
-
-        window.addEventListener('resize', setCanvasSize);
-        window.addEventListener('load', () => {
-            setCanvasSize();
-            draw();
-        });
-        
-        // Update mouse position on mousemove, relative to the document
-        document.addEventListener('mousemove', (e) => {
-            // Use clientX/Y as canvas is fixed position
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Handle touch move for mobile (no hover effect, but dots will react to touch)
-        document.addEventListener('touchmove', (e) => {
-            if (e.touches.length > 0) {
-                mouseX = e.touches[0].clientX;
-                mouseY = e.touches[0].clientY;
-            }
-        });
-
-        // Reset mouse position when touch ends
-        document.addEventListener('touchend', () => {
-            mouseX = -maxDistance;
-            mouseY = -maxDistance;
-        });
-
-    </script>
 </body>
 </html>
